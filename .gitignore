@@ -1,0 +1,7 @@
+*.zip
+*.tar
+*.gzip
+*.gz
+*junk*
+nopush/*
+
