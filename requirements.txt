@@ -1,0 +1,8 @@
+joblib
+numpy
+azureml-core
+azureml-monitoring
+inference-schema
+sklearn
+pandas
+matplotlib
