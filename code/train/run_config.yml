@@ -6,7 +6,7 @@ arguments: [
   "--penalty", 1.0
 ]
 # The name of the compute target to use for this run.
-target: githubcluster
+target: amlcompute3
 # Framework to execute inside. Allowed values are "Python", "PySpark", "CNTK", "TensorFlow", and "PyTorch".
 framework: Python
 # Communicator for the given framework. Allowed values are "None", "ParameterServer", "OpenMpi", and "IntelMpi".
@@ -47,7 +47,7 @@ environment:
     # Set False if necessary to work around shared volume bugs.
     sharedVolumes: true
     # Shared memory size for Docker container. Default is 2g.
-    shmSize: 2g
+    shmSize: 3g
     # Extra arguments to the Docker run command.
     arguments: []
     # Image registry that contains the base image.
