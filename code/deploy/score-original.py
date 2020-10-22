@@ -32,15 +32,13 @@ def init():
 # run() method parses and validates the incoming payload against
 # the example input you provide here. This will also generate a Swagger
 # API document for your web service.
-#@input_schema('data', NumpyParameterType(np.array([[0.1, 1.2, 2.3, 3.4]])))
-#@output_schema(StandardPythonParameterType({'predict': [['Iris-virginica']]}))
+@input_schema('data', NumpyParameterType(np.array([[0.1, 1.2, 2.3, 3.4]])))
+@output_schema(StandardPythonParameterType({'predict': [['Iris-virginica']]}))
 def run(data):
     # Use the model object loaded by init().
-    print(type(data))
-    #result = model.predict(data)
-    #inputs_dc.collect(data) #this call is saving our input data into Azure Blob
-    #prediction_dc.collect(result) #this call is saving our input data into Azure Blob
+    result = model.predict(data)
+    inputs_dc.collect(data) #this call is saving our input data into Azure Blob
+    prediction_dc.collect(result) #this call is saving our input data into Azure Blob
 
     # You can return any JSON-serializable object.
-    #return { "predict": result.tolist() }
-    return "result = " + type(data)
+    return { "predict": result.tolist() }
